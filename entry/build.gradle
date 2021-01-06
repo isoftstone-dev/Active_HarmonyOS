@@ -1,0 +1,25 @@
+apply plugin: 'com.huawei.ohos.hap'
+ohos {
+    compileSdkVersion 4
+    defaultConfig {
+        compatibleSdkVersion 3
+    }
+    compileOptions{
+        annotationEnabled true
+    }
+
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.har'])
+    testCompile'junit:junit:4.12'
+    compile files(
+            "./libs/javapoet_java.jar",
+            "./libs/orm_annotations_java.jar",
+            "./libs/orm_annotations_processor_java.jar")
+    annotationProcessor files(
+            "./libs/javapoet_java.jar",
+            "./libs/orm_annotations_java.jar",
+            "./libs/orm_annotations_processor_java.jar")
+}
